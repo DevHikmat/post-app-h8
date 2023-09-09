@@ -15,7 +15,7 @@ import {
 } from "../../store/slice/postSlice";
 import { PostService } from "../../services/PostService";
 import PostCard from "../../components/postCard/PostCard";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import AddPost from "../../components/addPost/AddPost";
 import Profile from "../../components/profile/Profile";
 import { items } from "./items";
@@ -29,10 +29,12 @@ const Home = () => {
   const dispatch = useDispatch();
   const [postList, setPostList] = useState(null);
   const [userInfo, setUserInfo] = useState({ posts: 0, like: 0, dislike: 0 });
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
+    navigate("/login");
   };
 
   const handleAllPost = async () => {
