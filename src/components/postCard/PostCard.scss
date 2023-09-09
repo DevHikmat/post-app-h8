@@ -1,0 +1,29 @@
+.post-card {
+  margin-bottom: 30px;
+  img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+  }
+  .author {
+    font-size: 18px;
+  }
+  .body {
+    h3 {
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    p {
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+  .footer {
+    display: flex;
+    gap: 30px;
+    padding-top: 15px;
+    span {
+      font-size: 22px;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+aside {
+  background-color: white !important;
+  height: 100vh;
+  position: sticky !important;
+  top: 0;
+  left: 0;
+  .demo-logo-vertical {
+    text-align: center;
+    padding-top: 50px;
+    h3 {
+      font-size: 30px;
+      margin-bottom: 50px;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+    }
+  }
+  .author {
+    &-img {
+      display: flex;
+      justify-content: center;
+      img {
+        display: block;
+        max-width: 60%;
+        height: auto;
+        border-radius: 50%;
+        object-fit: cover;
+        outline: 2px solid dodgerblue;
+        outline-offset: 5px;
+      }
+    }
+    &-title {
+      text-align: center;
+      padding-top: 20px;
+      h5 {
+        font-size: 22px;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+    &-info {
+      padding-top: 20px;
+      padding-bottom: 40px;
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      div {
+        text-align: center;
+        h6 {
+          font-size: 18px;
+        }
+        p {
+        }
+      }
+    }
+  }
+  .ant-menu {
+    li {
+    }
+  }
+}
+
+.ant-layout {
+  header {
+    background-color: white;
+  }
+}

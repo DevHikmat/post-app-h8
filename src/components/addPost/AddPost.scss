@@ -1,0 +1,29 @@
+.add-post {
+  &-header {
+    div {
+      margin-bottom: 20px;
+      label {
+        height: 300px;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        border: 2px dashed orange;
+        cursor: pointer;
+        font-size: 30px;
+        color: orange;
+        input {
+          display: none;
+        }
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+  &-body {
+  }
+}

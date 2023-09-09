@@ -1,0 +1,33 @@
+.register {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  &-content {
+    max-width: 400px;
+    form {
+      text-align: center;
+      border: 1px solid rgba($color: #000000, $alpha: 0.1);
+      padding: 40px 20px;
+      h2 {
+        margin-bottom: 20px;
+      }
+      p {
+        padding: 0;
+        border: none;
+      }
+      button {
+        width: 100%;
+      }
+    }
+    p {
+      border: 1px solid rgba($color: #000000, $alpha: 0.1);
+      padding: 20px;
+      text-align: center;
+      a {
+        margin-left: 10px;
+        color: dodgerblue;
+      }
+    }
+  }
+}
