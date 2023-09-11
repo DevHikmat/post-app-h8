@@ -1,28 +1,16 @@
 import { axiosInstance } from "./axiosInstance";
 
 export const CommentService = {
-  addComment: async function (token, comment) {
-    const res = await axiosInstance.post("/comment", comment, {
-      headers: {
-        access_token: token,
-      },
-    });
+  addComment: async function (comment) {
+    const res = await axiosInstance.post("/comment", comment);
     return res.data;
   },
-  updComment: async function (token, id, content) {
-    const res = await axiosInstance.put(`/comment/${id}`, content, {
-      headers: {
-        access_token: token,
-      },
-    });
+  updComment: async function (id, content) {
+    const res = await axiosInstance.put(`/comment/${id}`, content);
     return res.data;
   },
-  delComment: async function (token, id) {
-    const res = await axiosInstance.delete(`/comment/${id}`, {
-      headers: {
-        access_token: token,
-      },
-    });
+  delComment: async function (id) {
+    const res = await axiosInstance.delete(`/comment/${id}`);
     return res.data;
   },
 };

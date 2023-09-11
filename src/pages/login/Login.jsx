@@ -10,6 +10,7 @@ import {
   loginSuccess,
 } from "../../store/slice/authSlice";
 import { toast } from "react-toastify";
+import { setAxiosInstanceToken } from "../../services/axiosInstance";
 
 const Login = () => {
   const { isLoading } = useSelector((state) => state.authSlice);
@@ -25,6 +26,7 @@ const Login = () => {
       localStorage.setItem("token", data.token);
       dispatch(loginSuccess(data.user));
       localStorage.setItem("user", JSON.stringify(data.user));
+      setAxiosInstanceToken(data.token);
       navigate("/");
     } catch (error) {
       toast.error(error.response.data.message);

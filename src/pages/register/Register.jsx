@@ -10,6 +10,7 @@ import {
 } from "../../store/slice/authSlice";
 import { AuthService } from "../../services/AuthService";
 import { toast } from "react-toastify";
+import { setAxiosInstanceToken } from "../../services/axiosInstance";
 
 const Register = () => {
   const [form] = Form.useForm();
@@ -24,6 +25,7 @@ const Register = () => {
       toast.success(data.message);
       dispatch(registerSuccess(data.user));
       localStorage.setItem("user", JSON.stringify(data.user));
+      setAxiosInstanceToken(data.token);
       navigate("/");
     } catch (error) {
       console.log(error);

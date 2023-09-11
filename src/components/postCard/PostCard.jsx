@@ -33,8 +33,7 @@ const PostCard = ({ post, page = "home", getPostId }) => {
   const handleDeletePost = async (id) => {
     dispatch(changePostStart());
     try {
-      const token = localStorage.getItem("token");
-      const data = await PostService.deletePost(id, token);
+      const data = await PostService.deletePost(id);
       message.success(data.message);
       dispatch(changePostSuccess());
     } catch (error) {
@@ -46,8 +45,7 @@ const PostCard = ({ post, page = "home", getPostId }) => {
   const handleLike = async (id) => {
     dispatch(changePostStart());
     try {
-      const token = localStorage.getItem("token");
-      const data = await ReactionService.getLike(id, token);
+      const data = await ReactionService.getLike(id);
       message.success(data.message);
       dispatch(changePostSuccess());
     } catch (error) {
@@ -59,8 +57,7 @@ const PostCard = ({ post, page = "home", getPostId }) => {
   const handleDislike = async (id) => {
     dispatch(changePostStart());
     try {
-      const token = localStorage.getItem("token");
-      const data = await ReactionService.getDislike(id, token);
+      const data = await ReactionService.getDislike(id);
       message.success(data.message);
       dispatch(changePostSuccess());
     } catch (error) {

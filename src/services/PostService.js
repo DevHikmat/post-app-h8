@@ -9,12 +9,8 @@ export const PostService = {
     const res = await axiosInstance.get(`/post/${id}`);
     return res.data;
   },
-  createPost: async function (token, post) {
-    const res = await axiosInstance.post("/post", post, {
-      headers: {
-        access_token: token,
-      },
-    });
+  createPost: async function (post) {
+    const res = await axiosInstance.post("/post", post);
     return res.data;
   },
   myPosts: async function (token) {
@@ -25,20 +21,12 @@ export const PostService = {
     });
     return res.data;
   },
-  updPost: async function (id, token, post) {
-    const res = await axiosInstance.put(`/post/${id}`, post, {
-      headers: {
-        access_token: token,
-      },
-    });
+  updPost: async function (id, post) {
+    const res = await axiosInstance.put(`/post/${id}`, post);
     return res.data;
   },
-  deletePost: async function (id, token) {
-    const res = await axiosInstance.delete(`/post/${id}`, {
-      headers: {
-        access_token: token,
-      },
-    });
+  deletePost: async function (id) {
+    const res = await axiosInstance.delete(`/post/${id}`);
     return res.data;
   },
 };

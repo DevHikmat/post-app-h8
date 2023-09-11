@@ -23,8 +23,7 @@ const AddPost = () => {
       formData.append("title", title);
       formData.append("content", content);
       formData.append("image", img_rf.current.files[0]);
-      const token = localStorage.getItem("token");
-      const data = await PostService.createPost(token, formData);
+      const data = await PostService.createPost(formData);
       message.success(data.message);
       setUrl("");
       img_rf.current.value = "";

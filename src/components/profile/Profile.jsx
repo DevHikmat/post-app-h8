@@ -55,8 +55,7 @@ const Profile = () => {
     if (image_rf.current.files[0])
       formData.append("image", image_rf.current.files[0]);
     try {
-      const token = localStorage.getItem("token");
-      const data = await PostService.updPost(tempId, token, formData);
+      const data = await PostService.updPost(tempId, formData);
       message.success(data.message);
       setOpen(false);
       dispatch(changePostSuccess());
@@ -68,8 +67,7 @@ const Profile = () => {
 
   const getUserPosts = async () => {
     try {
-      const token = localStorage.getItem("token");
-      const data = await PostService.myPosts(token);
+      const data = await PostService.myPosts();
       setMyPosts(data);
       console.log(data);
     } catch (error) {

@@ -7,6 +7,7 @@ import { loginSuccess } from "./store/slice/authSlice";
 import { useDispatch } from "react-redux";
 import PostId from "./pages/postId/PostId";
 import { PostService } from "./services/PostService";
+import { setAxiosInstanceToken } from "./services/axiosInstance";
 
 const App = () => {
   const navigate = useNavigate();
@@ -18,6 +19,7 @@ const App = () => {
       await PostService.myPosts(token);
       dispatch(loginSuccess(JSON.parse(localStorage.getItem("user"))));
       setIsLogin(true);
+      setAxiosInstanceToken(token);
       let path = window.location.pathname;
       if (path.includes("login") || path.includes("register")) {
         navigate("/");

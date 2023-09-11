@@ -49,9 +49,8 @@ const PostId = () => {
   const submitComment = async () => {
     dispatch(changeComStart());
     try {
-      const token = localStorage.getItem("token");
       const comment = { postId: id, content: content.current.value };
-      const data = await CommentService.addComment(token, comment);
+      const data = await CommentService.addComment(comment);
       message.success(data.message);
       dispatch(changeComSuccess());
     } catch (error) {
@@ -64,8 +63,7 @@ const PostId = () => {
   const deleteComment = async (id) => {
     dispatch(changeComStart());
     try {
-      const token = localStorage.getItem("token");
-      const data = await CommentService.delComment(token, id);
+      const data = await CommentService.delComment(id);
       message.success(data.message);
       dispatch(changeComSuccess());
     } catch (error) {
@@ -83,8 +81,7 @@ const PostId = () => {
   const updateComment = async () => {
     dispatch(changeComStart());
     try {
-      const token = localStorage.getItem("token");
-      const data = await CommentService.updComment(token, tempId, {
+      const data = await CommentService.updComment(tempId, {
         content: value,
       });
       setTempId(null);
